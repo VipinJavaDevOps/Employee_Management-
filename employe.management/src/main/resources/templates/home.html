@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title background-color="green" align="center">AddUser</title>
+<link th:href="@{/style2.css}" rel="stylesheet">
+<style>
+		table, th, td {
+		  border: 2px solid #96D4D4;
+		  border-collapse: collapse;
+		  padding:5px 5px;		}
+		</style>
+</head>
+<body>
+
+<form action="/user-data" th:action="@{/user-data}" th:object="${user}" method="get">
+<hr color="green"><h1>Add New User</h1></hr>
+<hr color="green"><table colour="red" align="center" border="1"><tr><td><lebel for="user-name">User Name</td>
+<td><input type="text" th:field="*{name}"id="name"placeholder="name"></input><span th:if="${#fields.has errors('name')}"th:errors="*{name}"></span></td>
+</tr>
+<tr><td><lebel for="email">Email</lebel></td>
+<td><input type="text"name="email"></input><span th:if="${#fields.has errors('email')}"th:errors="*{email}"></span></td>
+</tr>
+<tr>
+<td>
+</td>
+
+<td><input type="submit"value="Add User"></input></td>
+</tr>
+</table>
+</hr>
+</form>
+
+
+</body>
+</html>
